@@ -7,13 +7,11 @@ checkBoxes();
 function checkBoxes() {
   const triggerBottom = (window.innerHeight / 5) * 4;
 
-  boxes.forEach((box) => {
-    const boxTop = box.getBoundingClientRect().top;
+  boxes.forEach(box => {
+    const boxTop = box.getBoundingClientRect().top; // Метод Element.getBoundingClientRect() возвращает размер элемента и его позицию относительно viewport (часть страницы, показанная на экране, и которую мы видим).
 
-    if (boxTop < triggerBottom) {
-      box.classList.add("show");
-    } else {
-      box.classList.remove("show");
-    }
+    boxTop < triggerBottom
+      ? box.classList.add("show")
+      : box.classList.remove("show");
   });
 }
